@@ -80,10 +80,13 @@ for cls in class_counts.index:
         
         for i in range(n_to_generate):
             img_aug = next(gen)[0]
+            
+            img_to_save = (img_aug * 255).astype(np.uint8)
+
+            img_aug = img_aug.astype('float32') / 255.0
             img_balanced.append(img_aug)
             label_balanced.append(cls)
             
-            img_to_save = (img_aug * 255).astype(np.uint8)
             
             # cv2.imshow("Augmented", img_to_save)
             # cv2.waitKey(100)
