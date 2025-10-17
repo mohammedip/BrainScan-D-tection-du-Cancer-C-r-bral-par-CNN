@@ -24,5 +24,5 @@ def predict_image(img_path):
     print(f"Predicted class: {pred_class} with probability {pred_prob:.2f}")
     return pred_class, pred_prob
 
-predict_image('Pituitary-macroadenoma-CT-01.jpg')
-predict_image('WhatsApp Image 2025-10-17 à 15.15.23_536c78fb.jpg')
+predict_image('pituitary.jpg')
+predict_image('meningioma.jpg')

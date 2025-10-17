@@ -92,9 +92,9 @@ for cls in class_counts.index:
             # cv2.waitKey(100)
             # cv2.destroyAllWindows()
             
-            filename = f"{cls}_aug_{i}.png"
-            filepath = os.path.join(save_dir, filename)
-            Image.fromarray(img_to_save).save(filepath)
+            # filename = f"{cls}_aug_{i}.png"
+            # filepath = os.path.join(save_dir, filename)
+            # Image.fromarray(img_to_save).save(filepath)
 
 
 img_balanced = np.array(img_balanced)
