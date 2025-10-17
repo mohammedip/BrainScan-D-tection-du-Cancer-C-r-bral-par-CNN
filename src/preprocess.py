@@ -63,8 +63,11 @@ label_balanced = []
 save_dir = 'augmented_images'
 os.makedirs(save_dir, exist_ok=True)
 
+imgs = np.array(imgs)
+labels = np.array(labels)
+
 for cls in class_counts.index:
-    img_cls = np.array(imgs)[np.array(labels) == cls].astype('float32') / 255.0
+    img_cls = imgs[labels == cls].astype('float32') / 255.0
     
     if img_cls.ndim == 3:
         img_cls = np.expand_dims(img_cls, 0)

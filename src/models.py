@@ -47,11 +47,11 @@ model.compile(optimizer=optimizer,
               metrics=['accuracy'])
 
 model.summary()
-# try:
-#     plot_model(model, to_file='model_architecture.png', show_shapes=True, show_layer_names=True)
-#     print("Saved model architecture plot to model_architecture.png")
-# except Exception as e:
-#     print("plot_model failed (graphviz/pydot missing?). Exception:", e)
+try:
+    plot_model(model, to_file='model_architecture.png', show_shapes=True, show_layer_names=True)
+    print("Saved model architecture plot to model_architecture.png")
+except Exception as e:
+    print("plot_model failed (graphviz/pydot missing?). Exception:", e)
 
 checkpoint_path = 'model/best_model.h5'
 checkpoint_cb = ModelCheckpoint(filepath=checkpoint_path,
@@ -95,7 +95,7 @@ plt.ylabel('Loss')
 plt.legend()
 
 plt.tight_layout()
-# plt.savefig('training_curves.png') 
+plt.savefig('training_curves.png') 
 plt.show()
 
 y_pred_probs = best_model.predict(X_test)
@@ -111,7 +111,7 @@ sns.heatmap(cm, annot=True, fmt='d', cmap='Blues')
 plt.title("Confusion Matrix")
 plt.xlabel("Predicted")
 plt.ylabel("True")
-# plt.savefig('confusion_matrix.png')
+plt.savefig('confusion_matrix.png')
 plt.show()
 
 def show_examples(X, y_true, y_pred, correct=True, samples=8):
